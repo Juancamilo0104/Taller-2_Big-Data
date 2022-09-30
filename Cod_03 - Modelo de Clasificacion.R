@@ -60,7 +60,7 @@ cm_knn<-confusionMatrix(data=k1 , reference=df_bal$Pobre_num[test] , mode="sens_
 
 cm_knn
 
-### Tecnica de desempe?o ---- Ricol
+### Tecnica de desempeño
 acc_knn <- Accuracy(y_pred = k1, y_true = df_bal$Pobre_num[test])
 
 pre_knn <- Precision(y_pred = k1, y_true = df_bal$Pobre_num[test], positive = "1")
@@ -111,7 +111,7 @@ cm_logit = confusionMatrix(data=clas_logit ,
                           mode="sens_spec" , positive="1")
 cm_logit
 
-### Tecnica de desempe?o ---- Ricol
+### Tecnica de desempeño
 pred_logit_in <- predict(logit , newdata=df_bal[-test,] , type="response")
 pred_logit_out <- predict(logit , newdata=df_bal[test,] , type="response")
 clas_logit_in <- factor(ifelse(pred_logit_in>rule,1, 0))
@@ -180,7 +180,7 @@ cm_probit <- confusionMatrix(data=clas_probit ,
                            mode="sens_spec" , positive="1")
 cm_probit
 
-### Tecnica de desempe?o ---- Ricol
+### Tecnica de desempeño
 pred_probit_in <- predict(probit , newdata=df_bal[-test,] , type="response")
 pred_probit_out <- predict(probit , newdata=df_bal[test,] , type="response")
 clas_probit_in <- factor(ifelse(pred_probit_in>rule,1, 0))
@@ -246,7 +246,7 @@ cm_lda <- confusionMatrix(data=clas_lda,
 cm_lda
 
 
-### Tecnica de desempe?o ---- Ricol
+### Tecnica de desempeño
 pred_lda_in <- predict(lda, newdata=df_bal[-test,] , type="response")
 pred_lda_out <- predict(lda, newdata=df_bal[test,] , type="response")
 clas_lda_in <- pred_lda_in$class
@@ -311,7 +311,7 @@ cm_qda <- confusionMatrix(data=clas_qda,
 cm_qda
 
 
-### Tecnica de desempe?o ---- Ricol
+### Tecnica de desempeño
 pred_qda_in <- predict(qda, newdata=df_bal[-test,] , type="response")
 pred_qda_out <- predict(qda, newdata=df_bal[test,] , type="response")
 clas_qda_in <- pred_qda_in$class
@@ -381,7 +381,7 @@ cm_rf <- confusionMatrix(data=pred_rf,
 cm_rf
 
 
-### Tecnica de desempe?o ---- Ricol
+### Tecnica de desempeño
 clas_rf_in <- predict(forest, df_bal[-test,])
 clas_rf_out <- predict(forest, df_bal[test,])
 
@@ -450,7 +450,7 @@ cm_ada <- confusionMatrix(data=pred_ada,
 cm_ada
 
 
-### Tecnica de desempe?o ---- Ricol
+### Tecnica de desempeño
 clas_ada_in <- predict(adaboost, df_bal[-test,])
 clas_ada_out <- predict(adaboost, df_bal[test,])
 
@@ -528,7 +528,7 @@ cm_xgb <- confusionMatrix(data=pred_xgb,
 cm_xgb
 
 
-### Tecnica de desempe?o ---- Ricol
+### Tecnica de desempeño
 clas_xgb_in <- predict(xgboost, df_bal[-test,])
 clas_xgb_out <- predict(xgboost, df_bal[test,])
 
